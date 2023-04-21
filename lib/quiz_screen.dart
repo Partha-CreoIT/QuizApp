@@ -27,32 +27,29 @@ class _QuestionScreen extends State<QuestionScreen> {
   @override
   Widget build(context) {
     final currentQuestion = questions[currentQuestionIndex];
-    return SizedBox(
-      width: double.infinity,
-      child: Container(
-        margin: const EdgeInsets.all(80.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
+    return Container(
+      margin: const EdgeInsets.all(80.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
               currentQuestion.text,
               style: GoogleFonts.lato(color: Colors.white, fontSize: 22),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            ...currentQuestion.shuffledAnswers().map((answer) {
-              return AnswerButton(
-                answerText: answer,
-                onTap: () {
-                  answerQuestion(answer);
-                },
-              );
-            })
-          ],
-        ),
+          ),
+          ...currentQuestion.shuffledAnswers().map((answer) {
+            return AnswerButton(
+              answerText: answer,
+              onTap: () {
+                answerQuestion(answer);
+              },
+            );
+          })
+        ],
       ),
     );
   }
