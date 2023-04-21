@@ -34,7 +34,7 @@ class _QuestionScreen extends State<QuestionScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.symmetric(vertical: 24,horizontal: 10),
             child: Text(
               currentQuestion.text,
               style: GoogleFonts.lato(color: Colors.white, fontSize: 22),

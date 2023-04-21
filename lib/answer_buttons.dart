@@ -30,21 +30,29 @@ class AnswerButton extends StatelessWidget {
       ),
     );*/
 
-    ElevatedButton(
-        onPressed: onTap,
-        style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 50),
-            backgroundColor: const Color.fromARGB(255, 107, 32, 132),
-            foregroundColor: Colors.white70,
-            elevation: 5.0,
-            textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(40),
-            ),),
-        child: Text(
-          answerText,
-          textAlign: TextAlign.center,
-        ),
-    );
+        Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ElevatedButton(
+              onPressed: () {
+                Future.delayed(const Duration(seconds: 1), () {
+                  onTap();
+                });
+              },
+              style: ElevatedButton.styleFrom(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 50),
+                backgroundColor: const Color.fromARGB(255, 107, 32, 132),
+                foregroundColor: Colors.white70,
+                elevation: 20.0,
+                textStyle:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(40)),
+              ),
+              child: Text(
+                answerText,
+                textAlign: TextAlign.center,
+              ),
+            ));
   }
 }
