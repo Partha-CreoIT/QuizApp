@@ -9,28 +9,27 @@ class AnswerButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return /*Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(40),
-        color: const Color.fromARGB(255, 107, 32, 132),
-      ),
-      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-      child: ElevatedButton(
-        onPressed: onTap,
-        child: ListTile(
-          title: Text(
-            answerText,
-            textAlign: TextAlign.center,
-          ),
-          textColor: Colors.white,
-          splashColor: Colors.black87,
-          dense: true,
-
+    return ListTile(
+      title: Text(
+        answerText,
+        style: const TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 18.0,
         ),
+        textAlign: TextAlign.center,
       ),
-    );*/
+      textColor: Colors.white,
+      onTap: onTap,
+      shape: RoundedRectangleBorder(
+        side: const BorderSide(
+          color: Color.fromARGB(255, 107, 32, 132),
+          width: 2,
+        ),
+        borderRadius: BorderRadius.circular(8),
+      ),
+    );
 
-        Padding(
+    /*Padding(
             padding: const EdgeInsets.all(8.0),
             child: ElevatedButton(
               onPressed: () {
@@ -53,6 +52,6 @@ class AnswerButton extends StatelessWidget {
                 answerText,
                 textAlign: TextAlign.center,
               ),
-            ));
+            ));*/
   }
 }
